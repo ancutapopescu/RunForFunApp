@@ -1,11 +1,8 @@
-package com.example.runforfunapp
+package com.example.runforfunapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.runforfunapp.db.RunDAO
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+import com.example.runforfunapp.R
 
 
 class MainActivity : AppCompatActivity() {
