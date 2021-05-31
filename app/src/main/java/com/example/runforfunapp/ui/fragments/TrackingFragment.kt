@@ -15,6 +15,7 @@ import com.example.runforfunapp.other.Constants.ACTION_START_OR_RESUME_SERVICE
 import com.example.runforfunapp.other.Constants.MAP_ZOOM
 import com.example.runforfunapp.other.Constants.POLYLINE_COLOR
 import com.example.runforfunapp.other.Constants.POLYLINE_WIDTH
+import com.example.runforfunapp.other.TrackingUtility
 import com.example.runforfunapp.services.Polyline
 import com.example.runforfunapp.services.TrackingService
 import com.example.runforfunapp.ui.viewmodels.MainViewModel
@@ -34,6 +35,8 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
     private var isTracking = false
     private var pathPoints = mutableListOf<Polyline>()
+
+    private var curTimeInMillis = 0L
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,6 +65,12 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
             pathPoints = it
             addLatestPolyline()
             moveCameraToUSer()
+        })
+
+        TrackingService.timeRunInMillis.observe(viewLifecycleOwner, Observer {
+            curTimeInMillis = it
+            val formattedTime = TrackingUtility.getFormattedStopWatchTime(curTimeInMillis, true)
+            tvTimer.text = formattedTime
         })
     }
 
