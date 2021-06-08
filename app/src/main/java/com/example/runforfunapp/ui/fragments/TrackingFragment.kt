@@ -48,7 +48,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
     private var menu: Menu? = null
 
-    private var weight = 0F
+    private var weight = 80F
 
     override fun onCreateView(
         inflater: LayoutInflater,
