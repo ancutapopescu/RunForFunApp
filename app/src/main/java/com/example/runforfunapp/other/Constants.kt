@@ -17,6 +17,11 @@ object Constants {
 
     const val TIMER_UPDATE_INTERVAL = 50L
 
+    const val SHARED_PREFERENCES_NAME = "sharedPref"
+    const val KEY_FIRST_TOGGLE = "KEY_FIRST_TOGGLE"
+    const val KEY_NAME = "KEY_NAME"
+    const val KEY_WEIGHT = "KEY_WEIGHT"
+
     const val POLYLINE_COLOR = Color.RED
     const val POLYLINE_WIDTH = 8F
     const val MAP_ZOOM = 15F
