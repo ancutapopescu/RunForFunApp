@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
 
+        bottomNavigationView.setOnNavigationItemReselectedListener { /* NO_OP */ }
+
         navHostFragment.findNavController()
             .addOnDestinationChangedListener {_, destination, _ ->
                 when(destination.id) {
